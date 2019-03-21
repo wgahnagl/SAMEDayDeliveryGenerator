@@ -4,13 +4,16 @@ import random
 from random import randrange
 import time
 from faker import Faker
+
 fake = Faker()
 
 
 def email_generator():
-    email_list = ["gmail.com", "yahoo.com", "aol.com", "comcast.net", "outlook.com", "gearsgearsgears.com", "csh.rit.edu"]
+    email_list = ["gmail.com", "yahoo.com", "aol.com", "comcast.net", "outlook.com", "gearsgearsgears.com",
+                  "csh.rit.edu"]
     random_dot = [".", ""]
-    return names.get_first_name(None) + random.choice(random_dot)+ names.get_last_name() + "@" + random.choice(email_list)
+    return names.get_first_name(None) + random.choice(random_dot) + names.get_last_name() + "@" + random.choice(
+        email_list)
 
 
 def vehicle_generator():
@@ -19,15 +22,17 @@ def vehicle_generator():
 
 
 def origin_customer():
+    # TODO: add real customers
     return "customer"
 
 
 def destination_customer():
+    # TODO: add real customers
     return "customer"
 
 
 def package_size():
-    return randrange(0,100)
+    return randrange(0, 100)
 
 
 def package_type():
@@ -40,6 +45,7 @@ def package_weight():
 
 
 def package_info():
+    # TODO: info should have real info
     return "info"
 
 
@@ -48,6 +54,7 @@ def package_price():
 
 
 def package_signature_id():
+    # TODO: signature should have an actual signature
     return "signature"
 
 
@@ -58,7 +65,7 @@ def time_interval_generator():
     else:
         delivery_timestamp = None
 
-    expected_delivery_date = randrange(1550620800, int(time.time()) + 14*(24*60*60))
+    expected_delivery_date = randrange(1550620800, int(time.time()) + 14 * (24 * 60 * 60))
     return {
         "ship_timestamp": ship_timestamp,
         "delivery_timestamp": delivery_timestamp,
